@@ -7,7 +7,6 @@ import { meals } from '../meals/entities/meals.entity';
 import { recipes } from '../recipes/entities/recipes.entity';
 import { users } from '../users/entities/users.entity';
 import { recipe_ingredients } from '../recipe-ingredients/entities/recipe-ingredients.entity';
-import { config } from '../config/config';
 
 const options = {
   "dialectOptions": {
@@ -34,5 +33,5 @@ export const databaseProviders = [
       //await sequelize.sync();
       return sequelize;
     }
-  },
+  }, 
 ];
