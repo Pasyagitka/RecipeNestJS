@@ -1,7 +1,6 @@
 import { Prop, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-
 export class Token {
     @Prop({ required: true })
     userId: number;

@@ -10,17 +10,17 @@ import { MailService } from './mail.service';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  controllers: [AuthController],
-  imports: [
-    ConfigModule.forRoot(),
-    UsersModule, 
-    PassportModule,
-    JwtModule.register({
-      secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: '1d' },
-    }),
-  ],
-  providers: [AuthService, MailService, LocalStrategy, JwtStrategy],
-  exports: [AuthService],
+    controllers: [AuthController],
+    imports: [
+        ConfigModule.forRoot(),
+        UsersModule, 
+        PassportModule,
+        JwtModule.register({
+            secret: process.env.JWT_SECRET,
+            signOptions: { expiresIn: '1d' },
+        }),
+    ],
+    providers: [AuthService, MailService, LocalStrategy, JwtStrategy],
+    exports: [AuthService],
 })
 export class AuthModule {}
