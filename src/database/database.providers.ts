@@ -1,4 +1,3 @@
-import { Injectable } from '@nestjs/common';
 import { Sequelize } from 'sequelize-typescript';
 import { categories } from '../categories/entities/categories.entity';
 import { cookbooks } from '../cookbooks/entities/cookbooks.entity';
@@ -30,7 +29,6 @@ export const databaseProviders = [
         users, 
         recipe_ingredients,
       ]);
-      //await sequelize.sync();
       return sequelize;
     }
   }, 

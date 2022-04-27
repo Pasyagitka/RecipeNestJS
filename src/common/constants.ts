@@ -5,3 +5,4 @@ export const MEALS_REPOSITORY = 'MealsRepository';
 export const RECIPE_INGREDIENTS_REPOSITORY = 'RecipeIngredientsRepository';
 export const RECIPES_REPOSITORY = 'RecipesRepository';
 export const USERS_REPOSITORY = 'UsersRepository';
+export const TOKENS_REPOSITORY = 'TokensRepository';
