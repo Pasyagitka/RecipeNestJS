@@ -1,10 +1,25 @@
+import { IsNotEmpty, IsNumber } from 'class-validator';
+
 export class CreateRecipeDto {
-    id: number;
+    @IsNotEmpty()
+    @IsNumber()
     categoryId: number;
+
+    @IsNotEmpty()
+    @IsNumber()
     authorId: number;
+
+    @IsNotEmpty()
+    @IsNumber()
     mealId: number;
-    datePublished: string;
+
+    datePublished: number;
+
     timeToCook: number;
+
+    @IsNotEmpty()
     instruction: string;
+
+    @IsNotEmpty()
     title: string;
 }

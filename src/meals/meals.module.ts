@@ -4,7 +4,7 @@ import { MealsController } from './meals.controller';
 import { mealsProviders } from './meals.providers';
 
 @Module({
-  controllers: [MealsController],
-  providers: [MealsService, ...mealsProviders],
+    controllers: [MealsController],
+    providers: [MealsService, ...mealsProviders],
 })
 export class MealsModule {}

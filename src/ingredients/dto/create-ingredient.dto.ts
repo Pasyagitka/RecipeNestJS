@@ -1,5 +1,8 @@
+import { IsNotEmpty } from 'class-validator';
+
 export class CreateIngredientDto {
-    id: number;
+    @IsNotEmpty()
     name: string;
+
     measurement: string;
 }

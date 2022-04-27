@@ -1,4 +1,4 @@
-import { recipe_ingredients } from "../entities/recipe-ingredients.entity";
+import { recipe_ingredients } from '../entities/recipe-ingredients.entity';
 
 export class RecipeIngredientDto {
     id: number;

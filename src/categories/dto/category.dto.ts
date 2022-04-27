@@ -1,4 +1,4 @@
-import { categories } from "../entities/categories.entity";
+import { categories } from '../entities/categories.entity';
 
 export class CategoryDto {
     id: number;

@@ -1,34 +1,27 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, UseGuards } from '@nestjs/common';
+import { Public } from 'src/auth/auth.decorator';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { CookbooksService } from './cookbooks.service';
 import { CreateCookbookDto } from './dto/create-cookbook.dto';
-import { UpdateCookbookDto } from './dto/update-cookbook.dto';
 
+@UseGuards(JwtAuthGuard)
 @Controller('cookbooks')
 export class CookbooksController {
-  constructor(private readonly cookbooksService: CookbooksService) {}
+    constructor(private readonly cookbooksService: CookbooksService) {}
 
-  @Post()
-  create(@Body() createCookbookDto: CreateCookbookDto) {
-    return this.cookbooksService.create(createCookbookDto);
-  }
+    @Post()
+    create(@Body() createCookbookDto: CreateCookbookDto) {
+        return this.cookbooksService.create(createCookbookDto);
+    }
 
-  @Get()
-  findAll() {
-    return this.cookbooksService.findAll();
-  }
+    @Public()
+    @Get(':id')
+    findAll(@Param('id') id: string) {
+        return this.cookbooksService.findAllForUser(+id);
+    }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.cookbooksService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCookbookDto: UpdateCookbookDto) {
-    return this.cookbooksService.update(+id, updateCookbookDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.cookbooksService.remove(+id);
-  }
+    @Delete(':recipeId')
+    remove(@Param('recipeId') recipeId: string, @Body('userId') userId: number) {
+        return this.cookbooksService.remove(+recipeId, userId);
+    }
 }

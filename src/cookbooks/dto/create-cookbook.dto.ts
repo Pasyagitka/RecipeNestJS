@@ -1,11 +1,9 @@
-import { cookbooks } from "../entities/cookbooks.entity";
+import { IsNotEmpty } from 'class-validator';
 
 export class CreateCookbookDto {
+    @IsNotEmpty()
     userId: number;
-    recipeId: number;
 
-    constructor(cookbook: cookbooks) {
-        this.userId = cookbook.userId;
-        this.recipeId = cookbook.recipeId;
-    }
+    @IsNotEmpty()
+    recipeId: number;
 }

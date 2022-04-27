@@ -1,13 +1,7 @@
-// import {
-//     IsString,
-//     IsEmail,
-//     IsEnum,
-//     IsISO8601,
-//     IsOptional,
-//     MinLength,
-// } from 'class-validator';
+import { IsString, IsNotEmpty } from 'class-validator';
 
 export class CreateCategoryDto {
-    id: number;
+    @IsString()
+    @IsNotEmpty()
     category: string;
 }

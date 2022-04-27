@@ -1,11 +1,11 @@
-import { recipes } from "../entities/recipes.entity";
+import { recipes } from '../entities/recipes.entity';
 
 export class RecipeDto {
     id: number;
     categoryId: number;
     authorId: number;
     mealId: number;
-    datePublished: string;
+    datePublished: number;
     timeToCook: number;
     instruction: string;
     title: string;

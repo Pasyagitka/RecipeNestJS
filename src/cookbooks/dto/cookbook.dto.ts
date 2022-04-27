@@ -1,4 +1,4 @@
-import { cookbooks } from "../entities/cookbooks.entity";
+import { cookbooks } from '../entities/cookbooks.entity';
 
 export class CookbookDto {
     userId: number;

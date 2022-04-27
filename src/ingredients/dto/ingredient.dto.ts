@@ -1,4 +1,4 @@
-import { ingredients } from "../entities/ingredients.entity";
+import { ingredients } from '../entities/ingredients.entity';
 
 export class IngredientDto {
     id: number;
