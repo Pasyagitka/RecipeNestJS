@@ -42,14 +42,14 @@ export class AuthService {
         if (findByEmail) {
             throw new AlreadyExistsError('email');
         }
-        const findByUsername = await this.usersService.findByUsername(user.username);
+        const findByUsername = await this.usersService.findByUsername(user.login);
         if (findByUsername) {
             throw new AlreadyExistsError('username');
         }
         const hashPassword = await bcrypt.hash(user.password, 3);
         const activationLink = uuid.v4();
 
-        const newUser = await this.usersService.create({email: user.email, login: user.username, password: hashPassword, activationLink});
+        const newUser = await this.usersService.create({email: user.email, login: user.login, password: hashPassword, activationLink});
         await this.mailService.sendActivationMail(newUser.email, `${process.env.API_URL}/auth/activate/${activationLink}`);
 
         this.loginWithCredentials(user);
