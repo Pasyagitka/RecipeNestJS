@@ -48,7 +48,7 @@ export class RecipesService {
         recipe.authorId = createRecipeDto.authorId;
         recipe.title = createRecipeDto.title;
         recipe.mealId = createRecipeDto.mealId;
-        //recipe.datePublished = Date.now(); //todo date
+        recipe.datePublished = new Date().toLocaleDateString('en-US');
         recipe.categoryId = createRecipeDto.categoryId;
         recipe.timeToCook = createRecipeDto.timeToCook;
         recipe.instruction = createRecipeDto.instruction;

@@ -13,7 +13,7 @@ export class CreateRecipeDto {
     @IsNumber()
     mealId: number;
 
-    datePublished: number;
+    datePublished: string;
 
     timeToCook: number;
 

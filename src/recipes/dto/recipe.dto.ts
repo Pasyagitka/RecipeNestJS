@@ -5,7 +5,7 @@ export class RecipeDto {
     categoryId: number;
     authorId: number;
     mealId: number;
-    datePublished: number;
+    datePublished: string;
     timeToCook: number;
     instruction: string;
     title: string;

@@ -11,7 +11,7 @@ export interface recipesAttributes {
     categoryId: number;
     authorId: number;
     mealId: number;
-    datePublished: number;
+    datePublished: string;
     timeToCook: number;
     instruction: string;
     title: string;
@@ -55,7 +55,7 @@ export class recipes extends Model<recipesAttributes, recipesAttributes> impleme
         allowNull: true, 
         type: DataType.STRING 
     })
-    datePublished: number;
+    datePublished: string;
 
     @Column({ 
         allowNull: true, 
